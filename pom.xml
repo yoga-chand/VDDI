@@ -27,7 +27,6 @@
 	<version>4.2.1.RELEASE</version>
 </dependency>
    
-    
   </dependencies>
   <modules>
   	<module>core</module>
