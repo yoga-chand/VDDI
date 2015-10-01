@@ -9,4 +9,3 @@ deploy:
   organization: DATAINTELLIGENCE
   space: development
   skip_cleanup: true
-  
