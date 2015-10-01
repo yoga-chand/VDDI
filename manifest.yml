@@ -1,0 +1,4 @@
+applications:
+  - name: dataintelligencehack
+path: DataIntelligence.war
+buildpack: https://github.com/cloudfoundry/java-buildpack.git
