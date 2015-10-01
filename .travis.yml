@@ -4,8 +4,8 @@ deploy:
   provider: cloudfoundry
   edge: true
   api: https://api.run.pivotal.io
-  username: yogachandran.ravindran@verizon.com
-  password: Look@123
+  username: "yogachandran.ravindran@verizon.com"
+  password: "Look@123"
   organization: DATAINTELLIGENCE
   space: development
   skip_cleanup: true
