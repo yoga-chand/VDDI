@@ -2,13 +2,11 @@ language: java
 sudo: false 
 deploy:
   provider: cloudfoundry
-  #edge: true
+  edge: true
   api: https://api.run.pivotal.io
   username: yogachandran.ravindran@verizon.com
-  password:
-    secure: TThr14dJOfyo+0A55FudpH8wFCmMMHNrRu6H07ONjWAxQTUnizBDNBhb9CP7oO4vY7HXgQUUKXPkgZEb5MO9lO+YIh9BQNcYXBHRwytbgd2poSAF83HG5+0VHBSPUqoiFgbGoE3pVTcBd5a0jAMbK7/iMq6/LGlfHfSzUS1iXz/yjkiXmRPtyuhY+K9M0W+3f7s5qa8bhFurjiBiR8HUO1KHwaIt3n6D9un6kbAfSkCjl9A/oAi+5ba91FyJMe0bXXEOWn+0A2V7n3mt4VPuqhDg61bYqFAcV75l3GAYln82AeIVhwdIwfqTIQh0RTvUL8zV4u8tMEV2PkWIdsifOA2/VNweQMaNZ6Ywgc8IgFlZZKDLXIt1EKNwyLYH4s8KxpVL9D4XQBU3PnQUrGw0q3Xu5HGoQW4EOW0Q5zAscTP74TlRjzDapjw/L4eLYNvJQ4HKnLvYGbdd9firVmSaUBjfO5VfHbPMiQpTBoG1dKzke/65WWyxw24P8++D/HrElECutCDLDg98thiUaROegk4b6VVtzerVy3Slx7dfKwOJzO461M0D/bEID9W2nl/YxEZvsx9VWVVdcXEebrd4+gaBT9Rr8F0Vf6Aqp6PYylchXOMxhCYU8wrb497zNXJbpH6Ui60JAbZskiuCNopmIRxRwWLg40ABJv/aB9rHPrY=
+  password:Look@123
   organization: DATAINTELLIGENCE
   space: development
   skip_cleanup: true
-  on:
-    repo: yoga-chand/VDDI
+  
