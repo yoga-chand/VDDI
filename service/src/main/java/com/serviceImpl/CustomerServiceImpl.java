@@ -96,9 +96,12 @@ public class CustomerServiceImpl implements ICustomerService{
 	public CustomerDetails getCustomerDetails(String mdn){
 
 		String database = "customerdetails";
-		Mongo mongo = DataUtils.getConnection(database);
+	//	Mongo mongo = DataUtils.getConnection(database);
 		CustomerDetails customerDetails = null;
 		try{
+			MongoClientURI uri  = new MongoClientURI("mongodb://yoga:test123@ds051863.mongolab.com:51863/CloudFoundry_omfu0lp3_t4cigvf3"); 
+        		MongoClient mongo = new MongoClient(uri);
+        		DB db = client.getDB(uri.getDatabase());
 			DB db = mongo.getDB(database);
 			DBCollection col = db.getCollection(database);
 			DBObject query = BasicDBObjectBuilder.start().add("mdn", mdn).get();
