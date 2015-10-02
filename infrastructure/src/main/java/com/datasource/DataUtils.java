@@ -29,7 +29,7 @@ public class DataUtils {
 		try {
 			
 		   MongoClientURI uri  = new MongoClientURI("mongodb://yoga:test123@ds051863.mongolab.com:51863/CloudFoundry_omfu0lp3_t4cigvf3"); 
-        	   MongoClient mongo = new MongoClient(uri);
+        	   mongo = new MongoClient(uri);
         	   DB db = client.getDB(uri.getDatabase());
 		   
 			
