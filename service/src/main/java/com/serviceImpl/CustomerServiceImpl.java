@@ -25,6 +25,8 @@ import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.Mongo;
+import com.mongodb.MongoClient;
+import com.mongodb.*;
 
 public class CustomerServiceImpl implements ICustomerService{
 
@@ -101,8 +103,7 @@ public class CustomerServiceImpl implements ICustomerService{
 		try{
 			MongoClientURI uri  = new MongoClientURI("mongodb://yoga:test123@ds051863.mongolab.com:51863/CloudFoundry_omfu0lp3_t4cigvf3"); 
         		MongoClient mongo = new MongoClient(uri);
-        		DB db = client.getDB(uri.getDatabase());
-			DB db = mongo.getDB(database);
+        		DB db = mongo.getDB(uri.getDatabase());
 			DBCollection col = db.getCollection(database);
 			DBObject query = BasicDBObjectBuilder.start().add("mdn", mdn).get();
 			DBCursor cursor = col.find(query);
