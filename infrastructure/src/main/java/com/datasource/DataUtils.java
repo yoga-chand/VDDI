@@ -4,6 +4,7 @@ import java.net.UnknownHostException;
 
 import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
+import com.mongodb.*;
 
 public class DataUtils {
 
@@ -26,7 +27,11 @@ public class DataUtils {
 	public static MongoClient getConnection(String database){
 		MongoClient mongo = null;
 		try {
-			mongo = new MongoClient("localhost", 27017);
+			
+		   MongoClientURI uri  = new MongoClientURI("mongodb://yoga:test123@ds051863.mongolab.com:51863/CloudFoundry_omfu0lp3_t4cigvf3); 
+        	   MongoClient mongo = new MongoClient(uri);
+        	   DB db = client.getDB(uri.getDatabase());
+		   
 			
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
