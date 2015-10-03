@@ -78,7 +78,7 @@ public class RecentOrders {
 			e.printStackTrace();
 		}
 		finally{
-			mongo.close();
+		//	mongo.close();
 		}
 		return order;
 	}
