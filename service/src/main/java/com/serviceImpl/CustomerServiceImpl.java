@@ -26,7 +26,7 @@ import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
 import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
-import com.mongodb.*;
+import com.mongodb.MongoClientURI;
 
 public class CustomerServiceImpl implements ICustomerService{
 
@@ -101,7 +101,7 @@ public class CustomerServiceImpl implements ICustomerService{
 		CustomerDetails customerDetails = null;
 		MongoClient mongo = null;
 		try{
-			MongoClientURI uri  = new MongoClientURI("mongodb://yoga:test123@ds051863.mongolab.com:51863/CloudFoundry_omfu0lp3_t4cigvf3"); 
+			MongoClientURI uri  = new MongoClientURI("mongodb://CloudFoundry_omfu0lp3_t4cigvf3_vc5m5ajq:D0pMgRG0Vq4g-thG5E2ERlTzmP_NvlwH@ds051863.mongolab.com:51863/CloudFoundry_omfu0lp3_t4cigvf3"); 
         	mongo = new MongoClient(uri);
         	DB db = mongo.getDB(uri.getDatabase());
 			DBCollection col = db.getCollection(database);
