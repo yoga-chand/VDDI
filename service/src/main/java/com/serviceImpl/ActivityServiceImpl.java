@@ -24,7 +24,6 @@ import com.mongodb.DBObject;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoClientURI;
 
-
 public class ActivityServiceImpl {
 
 
@@ -64,7 +63,7 @@ public class ActivityServiceImpl {
 		CustomerDetails customerDetails=null ;//= new XmlToJson().convertXmlToJSON("<customerdetails><mdn>1234567890</mdn><mdndetails><mdndetail><calldate>23-05-2015</calldate><calltime>21:15</calltime><activity>billenquiry</activity><street>portfield street</street><city>NJ</city></mdndetail><mdndetail><calldate>23-05-2015</calldate><calltime>21:15</calltime><activity>billenquiry</activity><street>portfield street</street><city>NJ</city></mdndetail></mdndetails></customerdetails>");
 		List<MdnDetails> mdnDetailsList = new ArrayList<MdnDetails>();
 		try {
-			MongoClientURI uri  = new MongoClientURI("mongodb://yoga:test123@ds051863.mongolab.com:51863/CloudFoundry_omfu0lp3_t4cigvf3"); 
+			MongoClientURI uri  = new MongoClientURI("mongodb://CloudFoundry_omfu0lp3_t4cigvf3_vc5m5ajq:D0pMgRG0Vq4g-thG5E2ERlTzmP_NvlwH@ds051863.mongolab.com:51863/CloudFoundry_omfu0lp3_t4cigvf3"); 
         	mongo = new MongoClient(uri);
         	DB db = mongo.getDB(uri.getDatabase());
 			DBCollection col = db.getCollection("customerdetails");
@@ -96,7 +95,6 @@ public class ActivityServiceImpl {
 		}
 		return mdnDetailsList;
 	}
-
 
 	public static Map<Boolean, String> isChronic(List<MdnDetails> mdnDetails){
 		List <String>asList = new ArrayList<String>();
