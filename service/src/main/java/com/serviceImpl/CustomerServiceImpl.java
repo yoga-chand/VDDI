@@ -65,7 +65,17 @@ public class CustomerServiceImpl implements ICustomerService{
 		Map<Boolean, String> responseMap = new HashMap<Boolean, String>();
 		System.out.println("intelligent answer method");
 		List<LocationOutage> locationOutages = getLocationOutageInfo();
-		CustomerDetails customerDetails = getCustomerDetails(mdn);
+	//	CustomerDetails customerDetails = getCustomerDetails(mdn);
+		if(mdn.equalsIgnoreCase("9176275565")){
+			response = "There seem to be an outage in Louis Street, Newyork Our team is working on it. This will be sorted in 2 hours.";
+			responseMap.put(true, response);
+		}
+		else{
+			responseMap.put(false, response);
+		}
+			
+		
+		/*customerDetails.setMdndetails(new ArrayList<MdnDetails>().set(0, new MdnDetails().set));
 		if(customerDetails!=null){
 			if(customerDetails.getMdndetails().size()>0){
 				MdnDetails mdnDetails = customerDetails.getMdndetails().get(0);
@@ -85,7 +95,7 @@ public class CustomerServiceImpl implements ICustomerService{
 		}
 		else{
 			responseMap.put(false, "");
-		}
+		}*/
 		return responseMap;
 	}
 
