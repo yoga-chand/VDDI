@@ -134,7 +134,7 @@ public class CustomerServiceImpl implements ICustomerService{
 			e.printStackTrace();
 		}
 		finally{
-			mongo.close();
+		//	mongo.close();
 		}
 
 		return customerDetails;
