@@ -1,6 +1,7 @@
 package com.serviceImpl;
 import java.io.IOException;
 import java.net.UnknownHostException;
+import java.util.Map;
 
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
@@ -25,13 +26,16 @@ public class VisionServiceImpl implements IVisionService {
 		MongoClient mongo = null;
 		String database = "usage";
 		try {
-			MongoClientURI uri  = new MongoClientURI("mongodb://CloudFoundry_omfu0lp3_t4cigvf3_vc5m5ajq:D0pMgRG0Vq4g-thG5E2ERlTzmP_NvlwH@ds051863.mongolab.com:51863/CloudFoundry_omfu0lp3_t4cigvf3"); 
+			Map<String,Object> dbMap = DataUtils.getConnection();
+			DB db = (DB)dbMap.get("db");
+			mongo = (MongoClient)dbMap.get("mongo");
+			/*MongoClientURI uri  = new MongoClientURI("mongodb://CloudFoundry_omfu0lp3_t4cigvf3_vc5m5ajq:D0pMgRG0Vq4g-thG5E2ERlTzmP_NvlwH@ds051863.mongolab.com:51863/CloudFoundry_omfu0lp3_t4cigvf3"); 
         	mongo = new MongoClient(uri);
-        	DB db = mongo.getDB(uri.getDatabase());
-        	if(!DataUtils.auth){
+        	DB db = mongo.getDB(uri.getDatabase());*/
+        	/*if(!DataUtils.auth){
         		DataUtils.auth = db.authenticate("yoga", "test123".toCharArray()); 
         		System.out.println("db authenticated "+DataUtils.auth);
-        	}
+        	}*/
 			DBCollection col = db.getCollection("usage");
 			DBObject query = BasicDBObjectBuilder.start().add("mdn", mdn).get();
 			DBCursor cursor = col.find(query);
