@@ -15,12 +15,12 @@ public class DataUtils {
 	
 	
 	
-	public static Map<String, Object> getConnection(){
+	public static synchronized Map<String, Object> getConnection(){
 		
         MongoClient mongo = null;
         System.out.println("dbmap size "+dbMap.size());
         if(dbMap.size()==0){
-        	synchronized (mongo) {
+        	
         		try { 
         			MongoClientURI uri  = new MongoClientURI("mongodb://CloudFoundry_omfu0lp3_t4cigvf3_vc5m5ajq:D0pMgRG0Vq4g-thG5E2ERlTzmP_NvlwH@ds051863.mongolab.com:51863/CloudFoundry_omfu0lp3_t4cigvf3"); 
         			mongo = new MongoClient(uri);
@@ -36,7 +36,6 @@ public class DataUtils {
         			// TODO Auto-generated catch block
         			e.printStackTrace();
         		}		
-			}
 		
         }
 		return dbMap;
