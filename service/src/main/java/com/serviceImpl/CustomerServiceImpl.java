@@ -63,7 +63,7 @@ public class CustomerServiceImpl implements ICustomerService{
 		Boolean isOutage=false;
 		String response ="";
 		Map<Boolean, String> responseMap = new HashMap<Boolean, String>();
-		
+		System.out.println("intelligent answer method");
 		List<LocationOutage> locationOutages = getLocationOutageInfo();
 		CustomerDetails customerDetails = getCustomerDetails(mdn);
 		if(customerDetails!=null){
@@ -98,12 +98,12 @@ public class CustomerServiceImpl implements ICustomerService{
 	public CustomerDetails getCustomerDetails(String mdn){
 
 		String database = "customerdetails";
-		Mongo mongo = null;
 		CustomerDetails customerDetails = null;
+		MongoClient mongo = null;
 		try{
 			MongoClientURI uri  = new MongoClientURI("mongodb://yoga:test123@ds051863.mongolab.com:51863/CloudFoundry_omfu0lp3_t4cigvf3"); 
-        		mongo = new MongoClient(uri);
-        		DB db = mongo.getDB(uri.getDatabase());
+        	mongo = new MongoClient(uri);
+        	DB db = mongo.getDB(uri.getDatabase());
 			DBCollection col = db.getCollection(database);
 			DBObject query = BasicDBObjectBuilder.start().add("mdn", mdn).get();
 			DBCursor cursor = col.find(query);
@@ -117,9 +117,11 @@ public class CustomerServiceImpl implements ICustomerService{
 
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
+			System.out.println("Exception in intelligent answer unknown host "+e.getMessage());
 			e.printStackTrace();
 		}
 		catch(Exception e){
+			System.out.println("Exception in intelligent answer "+e.getMessage());
 			e.printStackTrace();
 		}
 		finally{
