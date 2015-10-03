@@ -94,7 +94,7 @@ public class ActivityServiceImpl {
 			e.printStackTrace();
 		}
 		finally{
-			mongo.close();
+		//	mongo.close();
 		}
 		return mdnDetailsList;
 	}
