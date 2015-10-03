@@ -10,6 +10,8 @@ public class DataUtils {
 
 	private static DataUtils dataUtils;
 	
+	public static boolean auth = false;
+	
 	private DataUtils(){
 		
 	}
@@ -24,11 +26,11 @@ public class DataUtils {
 		return dataUtils;
 	}
 	
-	public static MongoClient getConnection(String database){
+/*	public static MongoClient getConnection(String database){
 		MongoClient mongo = null;
 		try {
 			
-		   MongoClientURI uri  = new MongoClientURI("mongodb://yoga:test123@ds051863.mongolab.com:51863/CloudFoundry_omfu0lp3_t4cigvf3"); 
+		   MongoClientURI uri  = new MongoClientURI("mongodb://CloudFoundry_omfu0lp3_t4cigvf3_vc5m5ajq:D0pMgRG0Vq4g-thG5E2ERlTzmP_NvlwH@ds051863.mongolab.com:51863/CloudFoundry_omfu0lp3_t4cigvf3"); 
         	   mongo = new MongoClient(uri);
         	   DB db = mongo.getDB(uri.getDatabase());
 		   
@@ -39,7 +41,7 @@ public class DataUtils {
 		}
 		return mongo;
 	}
-		
+		*/
 		
 	
 }
