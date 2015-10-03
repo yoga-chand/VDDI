@@ -104,6 +104,7 @@ public class CustomerServiceImpl implements ICustomerService{
 			MongoClientURI uri  = new MongoClientURI("mongodb://CloudFoundry_omfu0lp3_t4cigvf3_vc5m5ajq:D0pMgRG0Vq4g-thG5E2ERlTzmP_NvlwH@ds051863.mongolab.com:51863/CloudFoundry_omfu0lp3_t4cigvf3"); 
         	mongo = new MongoClient(uri);
         	DB db = mongo.getDB(uri.getDatabase());
+        	System.out.println("auth status "+DataUtils.auth);
         	if(!DataUtils.auth){
         		DataUtils.auth = db.authenticate("yoga", "test123".toCharArray()); 
         		System.out.println("db authenticated "+DataUtils.auth);
