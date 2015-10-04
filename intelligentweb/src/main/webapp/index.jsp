@@ -19,10 +19,7 @@
 		<option value="3176271167">3176271167</option>
 		<option value="5049134447">5049134447</option>
 		<option value="6500065000">6500065000</option>
-		<option value="6500165001">6500165001</option>
-		<option value="6500265002">6500265002</option>
-		<option value="6352428745">6352428745</option>
-		<option value="1234567890">1234567890</option>
+		
 	</select>
 	<br/><br/><br/>
 	&nbsp;&nbsp;<input style="margin-left:80px;width:130px;" type="button" id="simple" value="Find Suggestion" /> </br>
