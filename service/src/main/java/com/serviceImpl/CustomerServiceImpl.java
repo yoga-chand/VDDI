@@ -115,18 +115,20 @@ public class CustomerServiceImpl implements ICustomerService{
 			//Map<String,Object> dbMap = DataUtils.getConnection();
 			//DB db = (DB)dbMap.get("db");
 			//mongo = (MongoClient)dbMap.get("mongo");
-			MongoClientURI uri  = new MongoClientURI("mongodb://CloudFoundry_omfu0lp3_t4cigvf3_vc5m5ajq:D0pMgRG0Vq4g-thG5E2ERlTzmP_NvlwH@ds051863.mongolab.com:51863/CloudFoundry_omfu0lp3_t4cigvf3"); 
+			MongoClientURI uri  = new MongoClientURI("mongodb://yoga:test123@ds051863.mongolab.com:51863/CloudFoundry_omfu0lp3_t4cigvf3");
+			//MongoClientURI uri  = new MongoClientURI("mongodb://CloudFoundry_omfu0lp3_t4cigvf3_vc5m5ajq:D0pMgRG0Vq4g-thG5E2ERlTzmP_NvlwH@ds051863.mongolab.com:51863/CloudFoundry_omfu0lp3_t4cigvf3"); 
         		mongo = new MongoClient(uri);
         		DB db = mongo.getDB(uri.getDatabase());
-        		System.out.println("auth status in custservice impl "+DataUtils.auth);
-        		if(!DataUtils.auth){
-	        		DataUtils.auth = db.authenticate("yoga", "test123".toCharArray()); 
-        			System.out.println("db authenticated "+DataUtils.auth);
-        		}
+        	//	System.out.println("auth status in custservice impl "+DataUtils.auth);
+        		//if(!DataUtils.auth){
+	        //		db.authenticate("yoga", "test123".toCharArray()); 
+        			//System.out.println("db authenticated "+DataUtils.auth);
+        		//}
 			DBCollection col = db.getCollection(database);
 			DBObject query = BasicDBObjectBuilder.start().add("mdn", mdn).get();
 			DBCursor cursor = col.find(query);
-			ObjectMapper mapper = new ObjectMapper();		    
+			ObjectMapper mapper = new ObjectMapper();	
+			
 			while(cursor.hasNext()){
 
 				customerDetails = mapper.readValue(cursor.next().toString(), CustomerDetails.class);
@@ -146,7 +148,6 @@ public class CustomerServiceImpl implements ICustomerService{
 		finally{
 			mongo.close();
 		}
-
 		return customerDetails;
 	}
 
