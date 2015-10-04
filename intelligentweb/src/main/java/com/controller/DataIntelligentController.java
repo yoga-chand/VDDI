@@ -41,7 +41,7 @@ public class DataIntelligentController extends HttpServlet {
 		String responseString = null;
 		boolean isAvailable = false;
 		String mdn = request.getParameter("mdn");
-		responseString = getFromCode(mdn);
+		responseString = getFromDB(mdn);
 		response.getWriter().println(responseString);
 	}
 	
