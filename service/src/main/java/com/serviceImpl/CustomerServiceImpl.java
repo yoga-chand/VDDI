@@ -75,7 +75,7 @@ public class CustomerServiceImpl implements ICustomerService{
 		}*/
 			
 		
-		customerDetails.setMdndetails(new ArrayList<MdnDetails>().set(0, new MdnDetails().set));
+	//	customerDetails.setMdndetails(new ArrayList<MdnDetails>().set(0, new MdnDetails().set));
 		if(customerDetails!=null){
 			if(customerDetails.getMdndetails().size()>0){
 				MdnDetails mdnDetails = customerDetails.getMdndetails().get(0);
