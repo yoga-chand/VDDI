@@ -47,7 +47,7 @@ public class DataIntelligentController extends HttpServlet {
 		if(responseMap.containsKey(true)){
 			responseString = responseMap.get(true);
 		}
-		else{
+	/*	else{
 			IVisionService visionService = new VisionServiceImpl();
 
 			Usage usage = visionService.getMdnUsageDetail(mdn);
@@ -119,7 +119,7 @@ public class DataIntelligentController extends HttpServlet {
 
 
 		}
-
+*/
 		//}
 		response.getWriter().println(responseString);
 	}
