@@ -116,7 +116,7 @@ public CustomerDetails getCustomerDetails(String mdn){
 			//DB db = (DB)dbMap.get("db");
 			//mongo = (MongoClient)dbMap.get("mongo");
 			//MongoClientURI uri = new MongoClientURI("mongodb://yoga:test123@host1/?authSource=db1");
-			MongoClientURI uri  = new MongoClientURI("mongodb://yoga:test123@ds051863.mongolab.com:51863/?authSource=CloudFoundry_omfu0lp3_t4cigvf3");
+			MongoClientURI uri  = new MongoClientURI("mongodb://yoga:test123@ds051863.mongolab.com:51863/?authSource=CloudFoundry_omfu0lp3_t4cigvf3&authMechanism=SCRAM-SHA-1");
 			System.out.println("after uri creation");
 			//MongoClientURI uri  = new MongoClientURI("mongodb://CloudFoundry_omfu0lp3_t4cigvf3_vc5m5ajq:D0pMgRG0Vq4g-thG5E2ERlTzmP_NvlwH@ds051863.mongolab.com:51863/CloudFoundry_omfu0lp3_t4cigvf3"); 
         		mongo = new MongoClient(uri);
