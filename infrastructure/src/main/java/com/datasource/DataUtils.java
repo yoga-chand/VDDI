@@ -22,8 +22,9 @@ public class DataUtils {
         if(dbMap.size()==0){
         	
         		try { 
-        			//MongoClientURI uri  = new MongoClientURI("mongodb://CloudFoundry_omfu0lp3_t4cigvf3_vc5m5ajq:D0pMgRG0Vq4g-thG5E2ERlTzmP_NvlwH@ds051863.mongolab.com:51863/CloudFoundry_omfu0lp3_t4cigvf3");
-        			MongoClientURI uri  = new MongoClientURI("mongodb://yoga:test123@ds051863.mongolab.com:51863/?authSource=CloudFoundry_omfu0lp3_t4cigvf3");
+        			MongoClientURI uri  = new MongoClientURI("mongodb://CloudFoundry_omfu0lp3_t4cigvf3_vc5m5ajq:D0pMgRG0Vq4g-thG5E2ERlTzmP_NvlwH@ds051863.mongolab.com:51863/CloudFoundry_omfu0lp3_t4cigvf3");
+				MongoCredential credential = MongoCredential.createCredential(yoga,"CloudFoundry_omfu0lp3_t4cigvf3","test123".toCharArray());        			
+        			//MongoClientURI uri  = new MongoClientURI("mongodb://yoga:test123@ds051863.mongolab.com:51863/?authSource=db1");
         			mongo = new MongoClient(uri);
         			DB db = mongo.getDB(uri.getDatabase());
         		    /*System.out.println("auth status "+DataUtils.auth);
