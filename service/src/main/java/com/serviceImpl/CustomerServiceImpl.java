@@ -107,7 +107,7 @@ public class CustomerServiceImpl implements ICustomerService{
 
 	public CustomerDetails getCustomerDetails(String mdn){
 
-		String database = "customerdetails";
+		String database = "CloudFoundry_omfu0lp3_t4cigvf3.customerdetails";
 		CustomerDetails customerDetails = null;
 		MongoClient mongo = null;
 		try{
