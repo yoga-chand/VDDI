@@ -105,22 +105,25 @@ public class CustomerServiceImpl implements ICustomerService{
 		return locationOutages;
 	}
 
-	public CustomerDetails getCustomerDetails(String mdn){
+public CustomerDetails getCustomerDetails(String mdn){
 
 		String database = "CloudFoundry_omfu0lp3_t4cigvf3.customerdetails";
 		CustomerDetails customerDetails = null;
 		MongoClient mongo = null;
 		try{
-			
+			System.out.println("getcustdetails");
 			//Map<String,Object> dbMap = DataUtils.getConnection();
 			//DB db = (DB)dbMap.get("db");
 			//mongo = (MongoClient)dbMap.get("mongo");
-			//MongoClientURI uri  = new MongoClientURI("mongodb://yoga:test123@ds051863.mongolab.com:51863/CloudFoundry_omfu0lp3_t4cigvf3");
+			//MongoClientURI uri = new MongoClientURI("mongodb://yoga:test123@host1/?authSource=db1");
 			MongoClientURI uri  = new MongoClientURI("mongodb://yoga:test123@ds051863.mongolab.com:51863/?authSource=CloudFoundry_omfu0lp3_t4cigvf3");
+			System.out.println("after uri creation");
 			//MongoClientURI uri  = new MongoClientURI("mongodb://CloudFoundry_omfu0lp3_t4cigvf3_vc5m5ajq:D0pMgRG0Vq4g-thG5E2ERlTzmP_NvlwH@ds051863.mongolab.com:51863/CloudFoundry_omfu0lp3_t4cigvf3"); 
         		mongo = new MongoClient(uri);
+        		System.out.println("after mongo creation");
         		DB db = mongo.getDB(uri.getDatabase());
-        	/*	System.out.println("auth status in custservice impl "+DataUtils.auth);
+        		System.out.println("after db creation");
+        		/*System.out.println("auth status in custservice impl "+DataUtils.auth);
         		if(!DataUtils.auth){
 	        		db.authenticate("yoga", "test123".toCharArray()); 
         			System.out.println("db authenticated "+DataUtils.auth);
@@ -151,6 +154,7 @@ public class CustomerServiceImpl implements ICustomerService{
 		}
 		return customerDetails;
 	}
+
 
 	public String intelligentAnswer() {
 		// TODO Auto-generated method stub
