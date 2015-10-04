@@ -36,7 +36,7 @@ public class DataUtils {
         		    }
         		    dbMap.put("mongo", mongo);
         		    dbMap.put("db", db);
-        		} catch (UnknownHostException e) {
+        		} catch (Exception e) {
         			// TODO Auto-generated catch block
         			e.printStackTrace();
         		}		
