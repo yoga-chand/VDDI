@@ -41,7 +41,7 @@ public class DataIntelligentController extends HttpServlet {
 		String responseString = null;
 		boolean isAvailable = false;
 		String mdn = request.getParameter("mdn");
-		responseString = getFromCode(mdn);
+		responseString = getFromDB(mdn);
 		response.getWriter().println(responseString);
 	}
 	
@@ -55,7 +55,7 @@ public class DataIntelligentController extends HttpServlet {
 		if(responseMap.containsKey(true)){
 			responseString = responseMap.get(true);
 		}
-		else{
+		/*else{
 			IVisionService visionService = new VisionServiceImpl();
 
 			Usage usage = visionService.getMdnUsageDetail(mdn);
@@ -135,7 +135,7 @@ public class DataIntelligentController extends HttpServlet {
 
 
 
-		}
+		}*/
 		return responseString;
 
 	}
